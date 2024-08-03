@@ -1,32 +1,132 @@
-.nav{
+.nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 40px 120px;
+    margin: 20px 40px;
     color: white;
+    padding: 10px 0;
 }
-.nav-logo{
-    font-family: Outfit;
-    font-size: 42px;
+
+.nav-logo {
+    font-family: 'Outfit', sans-serif;
+    font-size: 32px;
     font-weight: 600;
     cursor: pointer;
 }
 
-.nav-menu{
+.nav-menu {
     display: flex;
     align-items: center;
     list-style: none;
     font-size: 18px;
-    gap: 90px;
+    gap: 30px;
     text-decoration: none;
 }
-.nav-menu li{
+
+.nav-menu li {
     cursor: pointer;
+    transition: color 0.3s ease;
 }
-.nav-contact{
+
+.nav-menu li:hover {
+    color: #ddd;
+}
+
+.nav-contact {
     border-radius: 50px;
-    padding: 10px 38px;
+    padding: 10px 20px;
     background: #fff;
     color: #262626;
     cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.nav-contact:hover {
+    background: #ddd;
+    color: #333;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background: white;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .nav {
+        margin: 10px 20px;
+    }
+
+    .nav-logo {
+        font-size: 28px;
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        padding: 0;
+    }
+
+    .nav-menu.active {
+        display: flex;
+        background-color: #333;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        padding: 20px 0;
+    }
+
+    .nav-menu li {
+        padding: 10px 20px;
+    }
+
+    .nav-contact {
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-logo {
+        font-size: 24px;
+    }
+
+    .nav-menu {
+        gap: 20px;
+    }
+
+    .nav-menu li {
+        font-size: 16px;
+    }
+
+    .nav-contact {
+        padding: 10px 0;
+    }
 }

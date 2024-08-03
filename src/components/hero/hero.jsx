@@ -1,9 +1,9 @@
-import './hero.css'
-import arrow_btn from '../../assets/arrow_btn.png'
-import play_icon from '../../assets/play_icon.png'
-import pause_icon from '../../assets/pause_icon.png'
+import './hero.css';
+import arrow_btn from '../../assets/arrow_btn.png';
+import play_icon from '../../assets/play_icon.png';
+import pause_icon from '../../assets/pause_icon.png';
 
-const hero = ({setPlayStatus,heroCount,setHeroCount,heroData,playStatus}) => {
+const Hero = ({ setPlayStatus, heroCount, setHeroCount, heroData, playStatus }) => {
     const handleExploreClick = () => {
         window.location.href = "/explore";
     };
@@ -17,23 +17,22 @@ const hero = ({setPlayStatus,heroCount,setHeroCount,heroData,playStatus}) => {
 
             <div className='hero-explore' onClick={handleExploreClick}>
                 <p>Explore the Society</p>
-                <img src={arrow_btn} alt="not found" />
+                <img src={arrow_btn} alt="Explore" />
             </div>
 
             <div className='hero-dot-play'>
                 <ul className="hero-dots">
-                    <li onClick={()=>setHeroCount(0)} className={heroCount===0?"hero-dot orange":"hero-dot"}></li>
-                    <li onClick={()=>setHeroCount(1)} className={heroCount===1?"hero-dot orange":"hero-dot"}></li>
-                    <li onClick={()=>setHeroCount(2)} className={heroCount===2?"hero-dot orange":"hero-dot"}></li>
+                    <li onClick={() => setHeroCount(0)} className={heroCount === 0 ? "hero-dot orange" : "hero-dot"}></li>
+                    <li onClick={() => setHeroCount(1)} className={heroCount === 1 ? "hero-dot orange" : "hero-dot"}></li>
+                    <li onClick={() => setHeroCount(2)} className={heroCount === 2 ? "hero-dot orange" : "hero-dot"}></li>
                 </ul>
                 <div className='hero-play'>
-                    <img onClick={()=>setPlayStatus(!playStatus)} src={playStatus?pause_icon:play_icon} alt="" />
+                    <img onClick={() => setPlayStatus(!playStatus)} src={playStatus ? pause_icon : play_icon} alt="Play/Pause" />
                     <p>See the video</p>
                 </div>
             </div>
-
         </div>
-    )
-}
+    );
+};
 
-export default hero
+export default Hero;

@@ -1,0 +1,20 @@
+.explore_page{
+    background: linear-gradient(90deg,#000,#fff);
+    height: fit-content;
+    width: fit-content;
+    
+}
+
+h1{
+    font-size: 4rem;
+    color: #fff;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px #000;
+    margin: 0;
+    
+}
+
+hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
